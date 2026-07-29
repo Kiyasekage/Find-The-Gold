@@ -5,6 +5,20 @@ name = input("What's your name? ")
 maps = [["■","■","■"],["■","■","■"],["■","■","■"]]
 row = random.randint(0,2)
 column = random.randint(0,2)
-gold = maps[row][column]
-print(maps)
+print(row,column)
+print(maps[0],maps[1],maps[2])
+while True:
+    ans = int(input("Please guess the gold : "))
+    ans = str(ans)
+    loc1 = int(ans[0])
+    loc2 = int(ans[1])
+    loc = maps[loc1][loc2]
+    print(loc1,loc2)
+    if loc1==row and loc2==column:
+        print("Congratulations, {name}.. You guessed it correctly")
+        break
+    else:
+        print("You guessed it wrong!")
+        maps[loc1][loc2] = "x"
+        print(maps)
 print(f"Thankyou for using our program,{name}!")
